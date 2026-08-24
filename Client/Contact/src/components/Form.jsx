@@ -1,6 +1,11 @@
+/**
+ * Component Houses the form, and collects the users data, passing it back up to the Home component
+ */
+
 import { useState } from "react";
 
 const Form = ({ setCurrent }) => {
+  //Holds state for the form
   const [form, setForm] = useState({ name: "", email: "", number: "" });
 
   //sets form data into state object and refreshes inputs to show blank
