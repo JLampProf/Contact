@@ -1,0 +1,25 @@
+Client:
+	Views:
+		Main - 
+			-nav
+			-form
+			-list
+		About -
+			-nav
+			-info
+
+Server:
+	Controllers:
+		POST (Adding Data)
+		GET (Retrieving Data)
+		PUT (Editing Data)
+		DELETE (Removing Data)
+
+
+Data (model):
+	id (Primary)
+	name
+	contact number
+	email
+	timestamp
+
