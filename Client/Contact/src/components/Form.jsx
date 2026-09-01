@@ -3,26 +3,39 @@
  */
 
 import { useState } from "react";
+import { contactUpload } from "../scripts/contactScript.js";
 
 const Form = ({ setCurrent }) => {
   //Holds state for the form
   const [form, setForm] = useState({ name: "", email: "", number: "" });
 
   //sets form data into state object and refreshes inputs to show blank
-  const submit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setCurrent({
-      name: form.name,
-      email: form.email,
-      number: form.number,
-    });
+    //API call
+    try {
+      const result = await contactUpload(form);
 
-    setForm({
-      name: "",
-      email: "",
-      number: "",
-    });
+      if (result === "success") {
+        //TODO: Success Toast here (Contact created)
+        setCurrent({
+          name: form.name,
+          email: form.email,
+          number: form.number,
+        });
+
+        setForm({
+          name: "",
+          email: "",
+          number: "",
+        });
+      } else {
+        //TODO: Failure Toast (Contact Failed to create)
+      }
+    } catch (error) {
+      //TODO: Fill in.
+    }
   };
 
   //sets input data into form state object
@@ -35,7 +48,7 @@ const Form = ({ setCurrent }) => {
 
   return (
     <>
-      <form onSubmit={submit} method="POST" action="">
+      <form onSubmit={handleSubmit} method="POST" action="">
         <label htmlFor="name">Name: </label>
         <input
           type="text"
