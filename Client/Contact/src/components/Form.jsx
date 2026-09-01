@@ -63,7 +63,9 @@ const Form = ({ setCurrent }) => {
           onChange={handleChange}
         />
         <br />
-        <button type="submit">Submit</button>
+        <button id="myButton" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );
