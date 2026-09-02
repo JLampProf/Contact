@@ -11,6 +11,8 @@ export const contactUpload = async (contactData) => {
   try {
     //Sending the data to the backend
     const result = await api.post("/api/upload", contactData);
+
+    //Return message from backend (success or fail)
     return result?.data?.message;
   } catch (error) {
     return {
