@@ -4,6 +4,7 @@
 
 import { useState } from "react";
 import { contactUpload } from "../scripts/contactScript.js";
+import { ToastContainer, toast } from "react-toastify";
 
 const Form = ({ setCurrent }) => {
   //Holds state for the form
@@ -18,7 +19,7 @@ const Form = ({ setCurrent }) => {
       const result = await contactUpload(form);
 
       if (result === "success") {
-        //TODO: Success Toast here (Contact created)
+        toast("New Contact Added!");
         setCurrent({
           name: form.name,
           email: form.email,
@@ -31,10 +32,11 @@ const Form = ({ setCurrent }) => {
           number: "",
         });
       } else {
-        //TODO: Failure Toast (Contact Failed to create)
+        throw new Error("Contact failed to Upload.");
       }
     } catch (error) {
-      //TODO: Fill in.
+      toast("Contact Failed to Add!");
+      console.error(error);
     }
   };
 
@@ -48,7 +50,16 @@ const Form = ({ setCurrent }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} method="POST" action="">
+      <ToastContainer
+        position="top-right"
+        closeOnClick
+        autoClose={3000}
+        hideProgressBar={true}
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
+      <form onSubmit={handleSubmit} method="POST">
         <label htmlFor="name">Name: </label>
         <input
           type="text"
