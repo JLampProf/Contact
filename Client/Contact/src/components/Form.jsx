@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { contactUpload } from "../scripts/contactScript.js";
 import { ToastContainer, toast } from "react-toastify";
+import { validateForm } from "../utils/validateForm.js";
 
 const Form = ({ setCurrent }) => {
   //Holds state for the form
@@ -13,6 +14,13 @@ const Form = ({ setCurrent }) => {
   //sets form data into state object and refreshes inputs to show blank
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //Validates the form
+    const validation = validateForm(form);
+    if (validation !== "") {
+      toast(validation);
+      return;
+    }
 
     //API call
     try {
