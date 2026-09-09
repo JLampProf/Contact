@@ -4,7 +4,7 @@
 
 import { useState } from "react";
 import { contactUpload } from "../scripts/contactScript.js";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 import { validateForm } from "../utils/validateForm.js";
 
 const Form = ({ setCurrent }) => {
@@ -67,11 +67,12 @@ const Form = ({ setCurrent }) => {
         theme="dark"
         transition={Bounce}
       />
-      <form onSubmit={handleSubmit} method="POST">
+      <form onSubmit={handleSubmit} method="POST" name="contactForm">
         <label htmlFor="name">Name: </label>
         <input
           type="text"
           name="name"
+          placeholder="name"
           id="name"
           value={form.name}
           onChange={handleChange}
@@ -81,6 +82,7 @@ const Form = ({ setCurrent }) => {
         <input
           type="text"
           name="email"
+          placeholder="email"
           id="email"
           value={form.email}
           onChange={handleChange}
@@ -90,6 +92,7 @@ const Form = ({ setCurrent }) => {
         <input
           type="text"
           name="number"
+          placeholder="number"
           id="number"
           value={form.number}
           onChange={handleChange}
