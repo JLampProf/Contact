@@ -22,3 +22,18 @@ export const contactUpload = async (contactData) => {
     };
   }
 };
+
+//get existing contact data in the DB
+export const contactDownload = async () => {
+  try {
+    const result = await api.get("/api/download");
+
+    return result.data;
+  } catch (error) {
+    return {
+      error: true,
+      status: error?.response?.status,
+      message: error?.response?.message,
+    };
+  }
+};

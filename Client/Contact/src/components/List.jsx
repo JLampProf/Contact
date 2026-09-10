@@ -3,6 +3,7 @@
  */
 
 const List = ({ list }) => {
+  console.log("list: ", list);
   return (
     <>
       {/* If current list is empty show a heading, otherwise render an ordered list of the items in the list */}

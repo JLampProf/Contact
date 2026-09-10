@@ -23,3 +23,14 @@ export const contactUpload = async (req, res) => {
     res.status(500).json({ message: "server error" });
   }
 };
+
+//Downloading all from the DB
+export const contactsDownload = async (req, res) => {
+  try {
+    const data = await pool.query("SELECT * FROM contacts LIMIT 25");
+
+    res.json(data[0]);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
+};

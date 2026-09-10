@@ -5,8 +5,12 @@
  */
 
 import express from "express";
-import { contactUpload } from "../../controllers/contactController.js";
+import {
+  contactUpload,
+  contactsDownload,
+} from "../../controllers/contactController.js";
 
 export const contactsRouter = express.Router();
 
 contactsRouter.post("/", contactUpload);
+contactsRouter.get("/", contactsDownload);

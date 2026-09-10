@@ -19,6 +19,7 @@ app.use(express.json());
 
 //routes
 app.use("/api/upload", contactsRouter);
+app.use("/api/download", contactsRouter);
 
 server.listen(PORT, () => {
   console.log(`Server is listening on PORT: ${PORT}`);

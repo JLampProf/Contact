@@ -28,11 +28,7 @@ const Form = ({ setCurrent }) => {
 
       if (result === "success") {
         toast("New Contact Added!");
-        setCurrent({
-          name: form.name,
-          email: form.email,
-          number: form.number,
-        });
+        setCurrent(form);
 
         setForm({
           name: "",
