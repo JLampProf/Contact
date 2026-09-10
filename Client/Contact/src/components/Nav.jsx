@@ -1,12 +1,11 @@
 const Nav = () => {
   return (
     <>
-      <nav>
-        <ul style={{ display: "flex", listStyle: "none" }}>
-          <li style={{ margin: "0 10px" }}>
-            <a href="">Home</a>
+      <nav className="nav">
+        <ul className="nav-list" style={{ display: "flex", listStyle: "none" }}>
+          <li className="nav-list-item">
+            <h1>Contact-App</h1>
           </li>
-          <li>About</li>
         </ul>
       </nav>
     </>

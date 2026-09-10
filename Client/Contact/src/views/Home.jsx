@@ -21,9 +21,12 @@ const Main = () => {
 
   return (
     <>
-      <h1>Contacts</h1>
-      <Form setCurrent={setCurrent} />
-      <List list={list} />
+      <div className="container">
+        <h1>Contacts</h1>
+        <Form setCurrent={setCurrent} />
+        <hr />
+        <List list={list} />
+      </div>
     </>
   );
 };

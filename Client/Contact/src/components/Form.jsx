@@ -67,7 +67,12 @@ const Form = ({ setCurrent }) => {
         theme="dark"
         transition={Bounce}
       />
-      <form onSubmit={handleSubmit} method="POST" name="contactForm">
+      <form
+        className="contact-form"
+        onSubmit={handleSubmit}
+        method="POST"
+        name="contactForm"
+      >
         <label htmlFor="name">Name: </label>
         <input
           type="text"
@@ -77,8 +82,7 @@ const Form = ({ setCurrent }) => {
           value={form.name}
           onChange={handleChange}
         />
-        <br />
-        <label htmlFor="email">email: </label>
+        <label htmlFor="email">Email: </label>
         <input
           type="text"
           name="email"
@@ -87,7 +91,6 @@ const Form = ({ setCurrent }) => {
           value={form.email}
           onChange={handleChange}
         />
-        <br />
         <label htmlFor="number">Contact Number: </label>
         <input
           type="text"
@@ -97,8 +100,7 @@ const Form = ({ setCurrent }) => {
           value={form.number}
           onChange={handleChange}
         />
-        <br />
-        <button id="myButton" type="submit">
+        <button className="submit-button" id="myButton" type="submit">
           Submit
         </button>
       </form>
