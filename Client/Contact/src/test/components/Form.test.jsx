@@ -5,7 +5,7 @@ import { describe, it, expect } from "vitest";
 import Form from "../../components/Form";
 import { contactUpload } from "../../scripts/contactScript.js";
 
-//Mocking the contactUpload method import
+//Mocking the contactScript functions
 vi.mock("../../scripts/contactScript.js");
 
 describe("Form", () => {

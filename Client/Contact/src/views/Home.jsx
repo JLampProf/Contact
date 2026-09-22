@@ -1,5 +1,5 @@
 /**
- * Component Holds the input form and the list of existing data
+ * Component Holds the input form and the dataList of existing data
  */
 
 import Form from "../components/Form.jsx";
@@ -9,9 +9,9 @@ import { contactDownload } from "../scripts/contactScript.js";
 
 const Home = () => {
   //Holds state for current entered data
-  const [current, setCurrent] = useState(null);
-  //Holds state for frontend data list, without needing to pull from the database after each entry
-  const [list, setList] = useState([]);
+  const [newFormData, setNewFormData] = useState(null);
+  //Holds state for frontend data dataList, without needing to pull from the database after each entry
+  const [dataList, setDataList] = useState([]);
   //Holds state if the contact Data is being downloaded or not
   const [downloading, setDownloading] = useState(false);
 
@@ -25,7 +25,7 @@ const Home = () => {
 
         //Only update current state if listData is not empty
         if (listData) {
-          setList(listData);
+          setDataList(listData);
         }
       } catch (error) {
         console.error(error);
@@ -36,20 +36,20 @@ const Home = () => {
     downloadList();
   }, []);
 
-  //Sets up the list after each addition is made to it without touching the DB
+  //Sets up the dataList after each addition is made to it without touching the DB
   useEffect(() => {
-    if (current) {
-      setList((prevList) => [...prevList, current]);
+    if (newFormData) {
+      setDataList((prevList) => [...prevList, newFormData]);
     }
-  }, [current]);
+  }, [newFormData]);
 
   return (
     <>
       <div className="container">
         <h1>Contacts</h1>
-        <Form setCurrent={setCurrent} />
+        <Form setNewFormData={setNewFormData} />
         <hr />
-        {downloading ? <h1>Downloading...</h1> : <List list={list} />}
+        {downloading ? <h1>Downloading...</h1> : <List dataList={dataList} />}
       </div>
     </>
   );
