@@ -12,32 +12,36 @@ I implemented the application's functionality myself while applying concepts I h
 
 The project focuses on the fundamentals of building a complete client-to-database workflow, including form handling, validation, REST API communication, database queries, asynchronous operations, and frontend state management.
 
-Tech Stack
-Frontend
-React.js
-Axios
-CSS
-Backend
-Node.js
-Express
-MySQL
-REST API
-Testing
-Vitest
-React Testing Library
-userEvent
-Features
-Add new contacts through a React form
-Client-side form validation
-Store contact information in MySQL
-Retrieve existing contacts from the database
-Display database records in the frontend
-Update the frontend contact list after successfully adding a contact
-Loading state while retrieving database data
-Success and error notifications
-REST API communication between frontend and backend
-Component and utility testing
-Application Flow
+Tech Stack:
+Frontend:
+ - React.js
+ - Axios
+ - CSS
+
+Backend:
+ - Node.js
+ - Express
+ - MySQL
+ - REST API
+
+Testing:
+ - Vitest
+ - React Testing Library
+ - userEvent
+
+Features:
+ - Add new contacts through a React form
+ - Client-side form validation
+ - Store contact information in MySQL
+ - Retrieve existing contacts from the database
+ - Display database records in the frontend
+ - Update the frontend contact list after successfully adding a contact
+ - Loading state while retrieving database data
+ - Success and error notifications
+ - REST API communication between frontend and backend
+ - Component and utility testing
+
+Application Flow:
 
 The application follows a straightforward client/server/database flow:
 
@@ -85,35 +89,36 @@ API requests are mocked where appropriate so components can be tested without re
 
 Tests cover functionality such as:
 
-Form rendering
-Form validation
-User input
-Successful form submission
-Error handling
-API interaction
-Contact list behaviour
+ - Form rendering
+ - Form validation
+ - User input
+ - Successful form submission
+ - Error handling
+ - API interaction
+ - Contact list behaviour
 
-Installation
+Installation:
 
-1. Clone the repository
-git clone <repository-url>
+1. Clone the repository:
+```bash
+git clone https://github.com/JLampProf/Contact.git
 cd <project-directory>
+```
 2. Install dependencies
-
 Install the frontend dependencies:
-
+```bash
 npm install
-
+```
 Install the dependencies in each directory:
-
+```bash
 cd client
 cd contact
 npm install
 
 cd ../../server
 npm install
+```
 3. Configure the database
-
 Create a MySQL database for the application.
 
 The required database/table structure can be found in:
@@ -135,13 +140,14 @@ DB_NAME=your_database
 
 Add any additional environment variables required by the project configuration.
 
-5. Start the backend
+5. Start the backend:
+```bash
 npm start
-6. Start the frontend
-
-If the frontend is separated from the backend:
-
+```
+6. Start the frontend:
+```bash
 npm run dev
+```
 7. Open the application
 
 Open the local development URL provided by Vite in your browser.
