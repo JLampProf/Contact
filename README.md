@@ -16,7 +16,7 @@ Screenshots
 
 1. ![MainPage](Screenshots/MainPage.png)
 
-2. ![NewContact](Screenshots/NewContact/png)
+2. ![NewContact](Screenshots/NewContact.png)
   
 3. ![MissingData](Screenshots/MissingData.png)
 
