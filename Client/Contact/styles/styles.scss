@@ -49,3 +49,26 @@ hr {
   width: 40%;
   border-color: #2c3639;
 }
+
+.dataGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  &-header {
+    font-weight: bold;
+    padding: 12px;
+    border-bottom: 2px solid #ccc;
+  }
+}
+
+.dataItem {
+  font-size: 1.2rem;
+  padding: 5px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+li {
+  list-style: none;
+}

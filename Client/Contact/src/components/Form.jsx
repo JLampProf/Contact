@@ -7,7 +7,7 @@ import { contactUpload } from "../scripts/contactScript.js";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import { validateForm } from "../utils/validateForm.js";
 
-const Form = ({ setCurrent }) => {
+const Form = ({ setNewFormData }) => {
   //Holds state for the form
   const [form, setForm] = useState({ name: "", email: "", number: "" });
 
@@ -28,7 +28,7 @@ const Form = ({ setCurrent }) => {
 
       if (result === "success") {
         toast("New Contact Added!");
-        setCurrent(form);
+        setNewFormData(form);
 
         setForm({
           name: "",

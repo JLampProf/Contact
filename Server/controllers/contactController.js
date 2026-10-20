@@ -14,7 +14,7 @@ export const contactUpload = async (req, res) => {
   try {
     //query the DB to insert the contact data
     await pool.query(
-      "INSERT INTO contacts (name, contact_number, email) VALUES (?, ?, ?)",
+      "INSERT INTO contacts (name, number, email) VALUES (?, ?, ?)",
       [contactData.name, contactData.number, contactData.email],
     );
     res.json({ message: "success" });

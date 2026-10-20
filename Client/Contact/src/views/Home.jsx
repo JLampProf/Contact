@@ -48,7 +48,6 @@ const Home = () => {
       <div className="container">
         <h1>Contacts</h1>
         <Form setNewFormData={setNewFormData} />
-        <hr />
         {downloading ? <h1>Downloading...</h1> : <List dataList={dataList} />}
       </div>
     </>
