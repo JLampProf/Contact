@@ -12,6 +12,17 @@ I implemented the application's functionality myself while applying concepts I h
 
 The project focuses on the fundamentals of building a complete client-to-database workflow, including form handling, validation, REST API communication, database queries, asynchronous operations, and frontend state management.
 
+Screenshots
+
+1. ![MainPage](Screenshots/MainPage.png)
+
+2. ![NewContact](Screenshots/NewContact/png)
+  
+3. ![MissingData](Screenshots/MissingData.png)
+
+4. ![InvalidData](Screenshots/InvalidData.png)
+
+
 Tech Stack:
 Frontend:
  - React.js
